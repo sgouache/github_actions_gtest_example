@@ -1,3 +1,5 @@
+option(gtest_disable_pthreads "Disable uses of pthreads in gtest." ON)
+
 add_executable(${PROJECT_NAME}.test
   AllTests.cpp
   ${PROJECT_NAME}Test.cpp)
