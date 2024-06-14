@@ -1,14 +1,15 @@
-option(gtest_disable_pthreads "Disable uses of pthreads in gtest." ON)
+enable_testing()
 
-add_executable(${PROJECT_NAME}.test
-  AllTests.cpp
-  ${PROJECT_NAME}Test.cpp)
-target_link_libraries(${PROJECT_NAME}.test
-  ${PROJECT_NAME} gtest) # pthread)
-target_compile_definitions(${PROJECT_NAME}.test 
-  PRIVATE TEST_DIR="${CMAKE_CURRENT_LIST_DIR}/test")
+add_executable(
+  hello_test
+  hello_test.cc
+)
 
-install(TARGETS ${PROJECT_NAME}.test
-        DESTINATION "${tool_dest}")
+find_package(GTest CONFIG REQUIRED)
+target_link_libraries(
+  hello_test
+  GTest::gtest_main
+)
 
-gtest_discover_tests(${PROJECT_NAME}.test)
+include(GoogleTest)
+gtest_discover_tests(hello_test)

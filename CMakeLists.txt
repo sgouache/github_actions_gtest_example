@@ -3,8 +3,6 @@ include(GoogleTest)
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
-enable_testing()
-
 cmake_minimum_required (VERSION 3.10.2)
 project (github_actions_gtest_example)
 
