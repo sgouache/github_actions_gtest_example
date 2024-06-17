@@ -21,7 +21,8 @@ set_options(${PROJECT_NAME}.info)
 #target_include_directories(${PROJECT_NAME}.info
 #  PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
 #         ${${PROJECT_NAME}_SOURCE_DIR}/include)
-target_link_libraries(${PROJECT_NAME}.info PUBLIC ${PROJECT_NAME})
+target_include_directories(${PROJECT_NAME}.info PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+target_link_libraries(${PROJECT_NAME}.info PRIVATE ${PROJECT_NAME})
 
 
 install(TARGETS ${PROJECT_NAME}
