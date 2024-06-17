@@ -28,7 +28,7 @@ add_executable(
   hello_test
   hello_test.cc
 )
-
+set_options(hello_test)
 find_package(GTest CONFIG REQUIRED)
 
 target_link_libraries(
