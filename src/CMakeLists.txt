@@ -25,11 +25,11 @@ target_include_directories(${PROJECT_NAME}.info PUBLIC ${CMAKE_CURRENT_BINARY_DI
 target_link_libraries(${PROJECT_NAME}.info PRIVATE ${PROJECT_NAME})
 
 
-install(TARGETS ${PROJECT_NAME}
-		LIBRARY DESTINATION "${lib_dest}"
-    ARCHIVE DESTINATION "${lib_dest}"
-    COMPONENT library)
-install(TARGETS ${PROJECT_NAME}.info
-		RUNTIME DESTINATION "${tool_dest}"
-    COMPONENT library)
-install(FILES ${header} DESTINATION "${include_dest}")
+# install(TARGETS ${PROJECT_NAME}
+# 		LIBRARY DESTINATION "${lib_dest}"
+#     ARCHIVE DESTINATION "${lib_dest}"
+#     COMPONENT library)
+# install(TARGETS ${PROJECT_NAME}.info
+# 		RUNTIME DESTINATION "${tool_dest}"
+#     COMPONENT library)
+# install(FILES ${header} DESTINATION "${include_dest}")
