@@ -6,7 +6,7 @@ FetchContent_Declare(
   GIT_TAG "v1.13.0")
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 #
-# - set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 # - ** This doesn't work due to a bug ** see below for the workaround
 FetchContent_MakeAvailable(googletest)
 
