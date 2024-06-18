@@ -58,7 +58,7 @@ jobs:
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
     - name: Configure CMake
-      run: cmake --preset ${{ matrix.preset }}
+      run: cmake --preset ${{ matrix.preset }} -DCMAKE_BUILD_TYPE=Release 
 
     - name: Build
       run: cmake --build --parallel --preset ${{ matrix.preset }}
