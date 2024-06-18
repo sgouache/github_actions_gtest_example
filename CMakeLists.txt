@@ -6,6 +6,8 @@ project (github_actions_gtest_example)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -g")
 
+enable_testing()
+
 # Set the location of the built artifacts:
 #
 # - Shared and static library target directory: lib
