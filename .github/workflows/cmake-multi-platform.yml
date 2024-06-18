@@ -49,9 +49,6 @@ jobs:
     - uses: ilammy/msvc-dev-cmd@v1
     - name: Setup Ninja
       uses: ashutoshvarma/setup-ninja@v1.1
-    - uses: Bacondish2023/setup-googletest@v1
-      with:
-        tag: v1.14.0
 
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
@@ -67,4 +64,4 @@ jobs:
       run: cmake --build --parallel --preset ${{ matrix.preset }}
 
     - name: Test
-      run: ctest --output-on-failure -V
+      run: ctest --output-on-failure -V --preset ${{ matrix.preset }}

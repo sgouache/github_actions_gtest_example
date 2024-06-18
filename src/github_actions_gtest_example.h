@@ -13,7 +13,11 @@
 #define VISIBLE __attribute__((visibility("default")))
 #else
 /* Windows Visual C++ only */
-#define VISIBLE __declspec(dllexport)
+#ifdef _EXPORTING
+   #define VISIBLE __declspec(dllexport)
+#else
+   #define VISIBLE __declspec(dllimport)
+#endif
 #endif
 
 namespace githubActionsGtestExample {

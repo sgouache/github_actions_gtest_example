@@ -1,3 +1,5 @@
+#define _EXPORTING
+
 #include "github_actions_gtest_example.h"
 
 namespace githubActionsGtestExample {

@@ -1,3 +1,5 @@
+set(CMAKE_CXX_STANDARD 17)
+
 #set(header_path "${${PROJECT_NAME}_SOURCE_DIR}/include/${PROJECT_NAME}")
 #set(header ${header_path}/${PROJECT_NAME}.h)
 set(src ${PROJECT_NAME}.cpp)
