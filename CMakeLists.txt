@@ -6,6 +6,18 @@ project (github_actions_gtest_example)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -g")
 
+# Set the location of the built artifacts:
+#
+# - Shared and static library target directory: lib
+# - Executable target directory: bin
+# - We must use these weird generator expressions to avoid the Debug and Release directories in VS
+# - More info: https://stackoverflow.com/q/47175912
+#
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY $<1:${CMAKE_BINARY_DIR}/lib/>)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY $<1:${CMAKE_BINARY_DIR}/lib/>)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY $<1:${CMAKE_BINARY_DIR}/bin/>)
+message(STATUS "Executables will be stored in ${CMAKE_BINARY_DIR}/bin/")
+message(STATUS "Libraries will be stored in ${CMAKE_BINARY_DIR}/lib/")
 
 # Sets the compiling options for Khiops
 function(set_options target)
