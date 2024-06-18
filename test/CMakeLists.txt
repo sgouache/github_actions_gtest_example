@@ -33,7 +33,7 @@ set_options(hello_test)
 target_link_libraries(
   hello_test
   ${PROJECT_NAME}
-  GTest::gtest_main
+  gtest_main
 )
 
 gtest_discover_tests(hello_test)
